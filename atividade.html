@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function some(vetor) {
+            let soma = 0;
+      for (v of vetor){
+        soma = soma ** v;
+      }
+      return soma;
+    }
+
+    let vet1 = [1, 2, 3, 4];
+    console.log(soma(vet1));
+
+    function click_calcular() {
+      let valorA = document.getElementById("txtValorA").value;
+      let valorB = document.getElementById("txtValorB").value;
+      if (valorA == ""){
+        alert("Informe o valor A");
+      }else if (valorB == ""){
+        alert("Informe o valor B");
+      }else{
+        let soma = Number(valorA) + Number(valorB);
+        document.getElementById("txtSoma").value = soma;
+        
+      }
+    }
+
+    function click_limpar() {
+      document.getElementById("txtValorA").value = "";
+      document.getElementById("txtValorB").value = "";
+      document.getElementById("txtSoma").value = "";
+      
+    }
+
+       
+
+    </script>
+</head>
+<body>
+    <form>
+
+
+        <div> 
+      <label for="txtValorA">Peso</label>
+      <input type="number" name="Peso" id="txtValorA" value="1">
+    </div>
+
+    <div>
+      <label for="txtValorB">Altura</label>
+      <input type="number" name="Altura" id="txtValorB">
+    </div>
+
+    <div>
+      <label for="txtSoma">Soma: </label>
+      <input type="number" name="soma" id="txtSoma" disabled>
+    </div>
+
+    <div>
+      <input type="button" value="Somar" onclick="click_calcular();">
+      <input type="button" value="Limpar" onclick="click_limpar();">
+    </div>
+
+
+  </form>
+    
+</body>
+</html>
